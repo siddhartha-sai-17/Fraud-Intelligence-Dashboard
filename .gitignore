@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Raw dataset (144 MB – too large for GitHub; download from Kaggle)
+creditcard.csv
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.egg-info/
+dist/
+build/
