@@ -210,7 +210,7 @@ render_header()
 if not models_loaded:
     st.warning(
         "Models not trained yet. Run training first:\n\n"
-        "```\nuv run python -m src.train\n```\n\n"
+        "```\npython -m src.train\n```\n\n"
         "You can still explore EDA in the notebook."
     )
     if "load_error" in dir():
