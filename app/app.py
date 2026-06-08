@@ -39,27 +39,27 @@ st.markdown("""
    TOKENS
 ═══════════════════════════════ */
 :root {
-    --bg-void:       #03050a;
-    --bg-base:       #070c14;
-    --bg-surface:    #0c1422;
-    --bg-raised:     #111c2e;
-    --bg-overlay:    #162035;
+    --bg-void:       #08111f;
+    --bg-base:       #0b172d;
+    --bg-surface:    #12203f;
+    --bg-raised:     #1a2c52;
+    --bg-overlay:    rgba(10, 23, 45, 0.90);
 
-    --border-dim:    #1a2638;
-    --border-mid:    #243248;
-    --border-lit:    #2e4060;
+    --border-dim:    #1f334f;
+    --border-mid:    #243b5b;
+    --border-lit:    #2f4a7a;
 
-    --accent-cyan:   #00d4ff;
-    --accent-blue:   #0085ff;
-    --accent-green:  #00e5a0;
-    --accent-red:    #ff3d5a;
-    --accent-amber:  #ffaa00;
-    --accent-purple: #a855f7;
+    --accent-cyan:   #4fd8ff;
+    --accent-blue:   #4d85ff;
+    --accent-green:  #4ade80;
+    --accent-red:    #ff6e8c;
+    --accent-amber:  #ffb74d;
+    --accent-purple: #a77bff;
 
-    --text-primary:  #e8f0fe;
-    --text-secondary:#7a93b8;
-    --text-muted:    #3d5270;
-    --text-accent:   #00d4ff;
+    --text-primary:  #eef4ff;
+    --text-secondary:#b5c8ff;
+    --text-muted:    #8aa4c6;
+    --text-accent:   #7dd3fc;
 
     --glow-cyan:     0 0 20px rgba(0, 212, 255, 0.15);
     --glow-red:      0 0 20px rgba(255, 61, 90, 0.2);
@@ -902,18 +902,44 @@ def render_header():
         <div class="aegis-wordmark">
             <div class="aegis-hex">⬡</div>
             <div>
-                <div class="aegis-name">AEGIS <span>·</span> FRAUD INTELLIGENCE</div>
-                <div class="aegis-subtitle">Sequential Transaction Analysis · LSTM + Attention Engine</div>
+                <div class="aegis-name">AEGIS <span>·</span> Fraud Intelligence</div>
+                <div class="aegis-subtitle">Sequence-aware fraud detection · explainable risk visualization</div>
             </div>
         </div>
         <div class="aegis-status-bar">
             <div class="status-chip">
                 <div class="status-dot"></div>
-                System Nominal
+                Live dashboard
             </div>
-            <div class="sys-tag">LIVE</div>
             <div class="sys-tag">v2.1.0</div>
             <div class="sys-tag">{now}</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+def render_overview():
+    st.markdown("""
+    <div class="hero-grid">
+        <div class="hero-card">
+            <div class="hero-card-title">Model Library</div>
+            <div class="hero-card-value">4 Models</div>
+            <div class="hero-card-note">Switch between dense, LSTM, attention, and positional encoding variants.</div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-card-title">Risk Controls</div>
+            <div class="hero-card-value">Thresholds</div>
+            <div class="hero-card-note">Fine-tune fraud and high-risk thresholds in the sidebar.</div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-card-title">Real-Time Mode</div>
+            <div class="hero-card-value">Stream Simulation</div>
+            <div class="hero-card-note">Inject synthetic transactions and observe detection live.</div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-card-title">Explainability</div>
+            <div class="hero-card-value">Attention View</div>
+            <div class="hero-card-note">Inspect the transaction influence scores behind each prediction.</div>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -948,6 +974,7 @@ except Exception as e:
 
 
 render_header()
+render_overview()
 
 if not models_loaded:
     st.warning(
